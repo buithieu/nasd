@@ -1,0 +1,113 @@
+@import "./color.scss";
+@import "./mixin.scss";
+
+.menu-container {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+
+  .menu-item {
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .item-icon {
+      img {
+        width: 40px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $black-font;
+  }
+}
+
+.tradingview-overview {
+  height: 40vh;
+}
+
+.modal-dialog {
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  top: calc(50% - 108px);
+  left: calc(50% - 182px);
+  background-color: $white;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+
+  @include shadowy;
+
+  .modal-content {
+    text-align: center;
+
+    .package-content {
+      .package-title {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
+
+      .package-limit {
+        color: red;
+        margin: 1rem 0;
+      }
+
+      .package-money-input {
+        margin: 1rem 0;
+        input {
+          line-height: 2rem;
+          width: 100%;
+          border: 1px solid#F3B784;
+
+          &:focus,
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+
+      button {
+        background: linear-gradient(90deg, #f7dc8c, #94632b);
+        color: $white;
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+        border-radius: 2rem;
+        border: none;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.backdrop {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(79, 90, 96, 0.4);
+}
